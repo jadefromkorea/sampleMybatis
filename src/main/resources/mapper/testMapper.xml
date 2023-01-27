@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.samplemybatis.mapper.TestMapper">
+    <select id="selectLeaveCodeList" parameterType="LeaveCode" resultType="LeaveCode">
+        SELECT
+        WRKATT_CD,
+        WRKATT_NM,
+        USE_YN,
+        PAY_DIV_CD,
+        USER_REQ_YN,
+        MIN_REQ_DD_CNT,
+        MAX_REQ_DD_CNT,
+        YR_USE_DD_CNT,
+        MRN_AFT_USE_YN,
+        RSN_IPT_MST_YN,
+        USE_DD_CNT,
+        MIN_USE_TM,
+        ORDER_NO,
+        '관리' vacationBoth
+        FROM
+        WS_FW_LEAVE_CODE
+        WHERE
+        COMP_CODE = 'FW00'
+        <if test='inpVacationName != null and inpVacationName != ""'>
+            AND WRKATT_NM LIKE '%' || #{inpVacationName} || '%'
+        </if>
+        <if test='inpUseType != null and inpUseType != ""'>
+            AND USE_YN = #{inpUseType}
+        </if>
+        ORDER BY
+        ORDER_NO,
+        WRKATT_CD
+    </select>
+
+</mapper>
