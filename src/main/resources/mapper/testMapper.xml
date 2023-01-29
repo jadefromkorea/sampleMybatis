@@ -32,4 +32,9 @@
         WRKATT_CD
     </select>
 
+
+    <select id="test1" resultType="Map">
+        select * from test1
+    </select>
+
 </mapper>

@@ -5,6 +5,14 @@ spring:
     url: ENC(yUdyguqidS7FSIPtvviK28nW+sA8kzHkMQFTvOy/8Pikt8m/HDjbrpfgvpWjZb0sJI0MCEY19Psx0SGWY57NXSkYLbxs0/IyqWxDZ3jNPJJ5pdUn86UphzcmQ/zS7iBoO878LMYGumHh7pzHAYUPD+9XJ5FkTAHo)
     username: ENC(3HtdKdvb8e4lkFRt2TEzSs5WnIGk4C9K)
     password: ENC(ABPuh3mrBhg/R4uNz3i2Po3h99Jl6mXr)
+
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://jadefromkorea.synology.me:54320/postgres
+#    username: postgres
+#    password: 123456
+
 mybatis:
   #  mapper ??? ??? ??. ?? ??? mapper ???? ??? ?? xml ??? ??.
   mapper-locations: mapper/**/*.xml
