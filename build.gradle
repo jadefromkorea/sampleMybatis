@@ -25,6 +25,8 @@ dependencies {
     // Jasypt
     implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:2.1.2'
 
+    implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql'

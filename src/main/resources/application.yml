@@ -1,17 +1,20 @@
 
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     url: ENC(yUdyguqidS7FSIPtvviK28nW+sA8kzHkMQFTvOy/8Pikt8m/HDjbrpfgvpWjZb0sJI0MCEY19Psx0SGWY57NXSkYLbxs0/IyqWxDZ3jNPJJ5pdUn86UphzcmQ/zS7iBoO878LMYGumHh7pzHAYUPD+9XJ5FkTAHo)
     username: ENC(3HtdKdvb8e4lkFRt2TEzSs5WnIGk4C9K)
     password: ENC(ABPuh3mrBhg/R4uNz3i2Po3h99Jl6mXr)
 mybatis:
-  #  mapper ??? ??? ??. ?? ??? mapper ???? ??? ?? xml ??? ??.
+  #  mapper 파일 경로 지정. 아래 형식은 mapper 디렉토리 하위의 모든 xml 파일을 포함.
   mapper-locations: mapper/**/*.xml
-  configuration:
-    # db ????? ???? ??? ? ?????? ???? ??.
-    map-underscore-to-camel-case: true
-  # @Alias? ???? ??? ??. ?? ??? ????? ??? ??.
+  # @Alias를 스캔하는 경로 설정. 아래 형식은 프로젝트의 전체를 스캔.
   type-aliases-package: com.example.samplemybatis
+  configuration:
+    # db 컬럼명에서 언더바를 제거한 후 카멜케이스로 변경하여 리턴.
+    map-underscore-to-camel-case: true
 server:
   port: 9090
+logging:
+  level:
+    root: info
