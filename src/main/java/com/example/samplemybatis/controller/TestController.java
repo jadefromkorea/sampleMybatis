@@ -18,7 +18,7 @@ public class TestController {
     @Autowired
     private TestService testService;
 
-    @PostMapping("searchLeaveCde")
+    @PostMapping("searchLeaveCode")
     @ResponseBody
     public List Test(LeaveCode leaveCode) {
 
