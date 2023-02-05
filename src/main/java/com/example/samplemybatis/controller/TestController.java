@@ -21,6 +21,7 @@ public class TestController {
     @PostMapping("searchLeaveCode")
     @ResponseBody
     public List Test(@RequestBody LeaveCode leaveCode) {
+        log.info(">>>>> leaveCode: {}", leaveCode);
 
         List<LeaveCode> leaveCodeList = testService.selectLeaveCodeList(leaveCode);
 
