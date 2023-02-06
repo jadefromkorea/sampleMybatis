@@ -12,8 +12,14 @@ import java.util.Map;
 @Slf4j
 @Service
 public class TestServiceImpl implements TestService{
-    @Autowired
-    private TestMapper testMapper;
+//    @Autowired
+//    private TestMapper testMapper;
+
+    private final TestMapper testMapper;
+
+    public TestServiceImpl(TestMapper testMapper) {
+        this.testMapper = testMapper;
+    }
 
     @Override
     public List<LeaveCode> selectLeaveCodeList(LeaveCode leaveCode) {
@@ -26,7 +32,7 @@ public class TestServiceImpl implements TestService{
 
     @Override
     public List<Map<String, String>> test1() {
-        log.info(">>>>> test1 <<<<<");
+        log.info(">>>>> test1 Service <<<<<");
 
         return testMapper.test1();
     }

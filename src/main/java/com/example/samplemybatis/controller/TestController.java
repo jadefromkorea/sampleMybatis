@@ -2,8 +2,10 @@ package com.example.samplemybatis.controller;
 
 import com.example.samplemybatis.entity.LeaveCode;
 import com.example.samplemybatis.service.TestService;
+import com.example.samplemybatis.service.TestServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.support.JdbcUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +17,15 @@ import java.util.Map;
 @Controller
 @RequestMapping("/test")
 public class TestController {
-    @Autowired
-    private TestService testService;
+//    @Autowired
+//    private TestService testService;
+
+    private final TestService testService;
+
+    public TestController(TestService testService) {
+        this.testService = testService;
+    }
+
 
     @PostMapping("searchLeaveCode")
     @ResponseBody
@@ -48,9 +57,11 @@ public class TestController {
     @GetMapping("test1")
     @ResponseBody
     public List<Map<String, String>> Test1() {
-        log.info(">>>>> test1 <<<<<");
+        log.info(">>>>> test1 Controller <<<<<");
 
         List<Map<String, String>> test1 = testService.test1();
+
+//        JdbcUtils.convertUnderscoreNameToPropertyName(test1)
 
         return test1;
     }
