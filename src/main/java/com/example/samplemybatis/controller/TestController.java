@@ -42,12 +42,18 @@ public class TestController {
     @GetMapping("getHtml")
     public String getHtml(Model model) {
 
-        List<LeaveCode> leaveCodeList = testService.selectLeaveCodeList(null);
+//        List<LeaveCode> leaveCodeList = testService.selectLeaveCodeList(null);
+//
+//        int size = leaveCodeList.size();
+//        log.info(">>>>> size: " + size);
 
-        int size = leaveCodeList.size();
+        List<Map<String, String>> test1 = testService.test1();
+
+        int size = test1.size();
         log.info(">>>>> size: " + size);
 
         model.addAttribute("size", size);
+        model.addAttribute("test1", test1);
 
         return "sample";
     }

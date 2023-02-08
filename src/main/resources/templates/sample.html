@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!--<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">-->
+<html xmlns:th="http://www.thymelead.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h3>사이즈: ${size}</h3>
+<h3>사이즈:</h3>
+<h3 th:text="${size}"></h3>
+
+<table>
+    <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+    </tr>
+
+    <tr th:each="test1 : ${test1}">
+        <td th:text="${test1.column_name}"></td>
+        <td th:text="${test1.column_name2}"></td>
+        <td th:text="${test1.column_name3}"></td>
+        <td th:text="${test1.column_name4}"></td>
+        <td th:text="${test1.column_name5}"></td>
+    </tr>
+
+</table>
+
 </body>
 </html>

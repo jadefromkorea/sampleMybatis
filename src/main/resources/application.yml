@@ -20,6 +20,47 @@ spring:
       maximum-pool-size: 40
       idle-timeout: 1000
       max-lifetime: 1000000
+#  thymeleaf:
+#    cache: false
+#    prefix: classpath:templates/
+#    suffix: .html
+#    check-template-location: true
+
+#  # thymeleaf 사용 여부
+#  spring.thymeleaf.enabled=true
+#  # template 경로 접두사
+#  spring.thymeleaf.prefix=classpath:/templates/
+#  # template 경로 접미사
+#  spring.thymeleaf.suffix=.html
+#  # cache 활성화 여부, 개발환경에서는 비 활성화
+#  spring.thymeleaf.cache=true;
+#  # template 인코딩
+#  spring.thymeleaf.encoding=UTF-8
+#  #기본 template 모드, TemplateMode에 정의 (HTML, XML, TEXT, JAVASCRIPT 등)
+#  spring.thymeleaf.mode=HTML
+#  # 렌더링 전에 template 존재 여부 확인
+#  spring.thymeleaf.check-template=true
+#  # template 위치 존재 여부 확인
+#  spring.thymeleaf.check-template-location=true
+
+  thymeleaf:
+    # thymeleaf 사용 여부
+    enabled: true
+    # template 경로 접두사
+    prefix: classpath:templates/
+    # template 경로 접미사
+    suffix: .html
+    # cache 활성화 여부, 개발환경에서는 비 활성화
+    cache: false
+    # template 인코딩
+    encoding: UTF-8
+    #기본 template 모드, TemplateMode에 정의 (HTML, XML, TEXT, JAVASCRIPT 등)
+    mode: HTML
+    # 렌더링 전에 template 존재 여부 확인
+    check-template: true
+    # template 위치 존재 여부 확인
+    check-template-location: true
+
 #  servlet:
 #    multipart:
 #      enabled: true
