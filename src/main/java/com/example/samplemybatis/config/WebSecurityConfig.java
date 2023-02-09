@@ -20,8 +20,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests().requestMatchers(
-                        new AntPathRequestMatcher("/**")).permitAll()
+        http.authorizeHttpRequests().requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
 
          /* 스프링 CSRF 토큰이 자동으로 생성된다. 즉, 스프링 시큐리티는 이렇게 발행한 CSRF 토큰의 값이 정확한지 검증하는 과정을 거친다.
          (만약 CSRF 값이 없거나 해커가 임의의 CSRF 값을 강제로 만들어 전송하는 악의적인 URL 요청은 스프링 시큐리티에 의해 블록킹 될 것이다.)
