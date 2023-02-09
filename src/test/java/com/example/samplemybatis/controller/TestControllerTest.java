@@ -1,20 +1,22 @@
 package com.example.samplemybatis.controller;
 
-import com.example.samplemybatis.entity.LeaveCode;
-import com.example.samplemybatis.mapper.TestMapper;
-import com.example.samplemybatis.service.TestService;
-import com.example.samplemybatis.service.TestServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
-import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 class TestControllerTest {
+    @Test
+    void test1() {
+        TestRestTemplate restTemplate =  new TestRestTemplate();
+
+        ResponseEntity<String> res = restTemplate.getForEntity("http://localhost:9090/test/test1", String.class);
+
+        System.out.println(">>>>> res: " + res.toString());
+
+        Assertions.assertThat(res.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
 //    @Autowired
 //    private TestMapper testMapper;
 //

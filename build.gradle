@@ -31,6 +31,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
 
+    // spring security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    //  Temporary explicit version to fix Thymeleaf bug
+    // thymeleaf-extras-springsecurity6 패키지를 사용하기 위해 뒤에 3.1.1.RELEASE과 같은 버전 정보를 추가했다.
+    // thymeleaf-extras-springsecurity6 패키지는 스프링부트가 자체적으로 관리하는 패키지이기 때문에 버전 정보가 필요없지만
+    // 현재 사용중인 스프링부트 버전인 3.0.0 버전에서는 위와 같은 버전 정보를 입력하지 않으면 오류가 발생한다. 만약 버전 정보를 제거하고 사용하더라도 오류가 없다면 버전 정보 없이 사용하기 바란다.
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+    implementation 'org.springframework.security:spring-security-test'
+
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql'
