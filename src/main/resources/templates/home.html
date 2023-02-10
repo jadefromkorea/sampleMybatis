@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
   <title>Spring Security Example</title>
 </head>
@@ -10,12 +11,26 @@
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" th:href="@{/user/login}">로그인</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" th:href="@{/user/signupFrom}">회원가입</a>-->
+<!--    </li>-->
+
+
+<!--    사용자의 로그인 여부는 타임리프의 sec:authorize 속성을 통해 알수 있다.-->
+
+<!--    sec:authorize="isAnonymous()" - 이 속성은 로그인 되지 않은 경우에만 해당 엘리먼트가 표시되게 한다.-->
+<!--    sec:authorize="isAuthenticated()" - 이 속성은 로그인 된 경우에만 해당 엘리먼트가 표시되게 한다.-->
+
+<!--    로그인을 안한 상태라면 sec:authorize="isAnonymous()"가 참이되어 "로그인" 링크가 표시되고 -->
+<!--    로그인을 한 상태라면 sec:authorize="isAuthenticated()"가 참이되어 "로그아웃" 링크가 표시될 것이다.-->
     <li class="nav-item">
-      <a class="nav-link" href="#">로그인</a>
+      <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+      <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" th:href="@{/user/signupFrom}">회원가입</a>
-    </li>
+
   </ul>
 </div>
 </body>

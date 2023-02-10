@@ -9,8 +9,10 @@
     </insert>
 
 
-    <select id="selectUserList" resultType="Map">
+    <select id="selectUser" parameterType="String" resultType="UserInfo">
         select * from user_info
+        where 1=1
+          and username = #{username}
     </select>
 
 </mapper>

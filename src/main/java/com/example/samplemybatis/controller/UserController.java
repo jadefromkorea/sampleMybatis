@@ -16,6 +16,23 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/")
+    public String main(){
+        return "redirect:/user/home";
+    }
+
+    @GetMapping("/home")
+    public String home(){
+        return "home";
+    }
+
+    // login_form.html 템플릿을 렌더링하는 GET 방식의 login 메서드
+    // 실제 로그인을 진행하는 @PostMapping 방식의 메서드는 스프링 시큐리티가 대신 처리하므로 직접 구현할 필요가 없다.
+    @GetMapping("/login")
+    public String login() {
+        return "login_form";
+    }
+
     @GetMapping("/signupFrom")
     public String signupFrom(UserInfo userCreateForm) {
         return "signup_form";
